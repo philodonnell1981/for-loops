@@ -1,0 +1,32 @@
+package testingProject;
+
+import java.util.*;
+
+public class MainClass {
+  
+  static Scanner cin = new Scanner (System.in);
+
+  public static void main(String[] args) {
+    
+/*
+ * Write a Java program that lets the user enter an integer N 
+ * and then calculates and displays the product of the following
+ * P = 2(1) × 4(3) × 6(5) × … × 2N(N - 1)
+ */
+    
+    int i, n;
+    double p;
+    
+    p = 1;
+    
+    System.out.println("Enter a positive integer: ");
+    n = Integer.parseInt(cin.nextLine());
+    
+    for (i = 2; i <= 2 * n; i += 2) {
+      p *= Math.pow(i, i - 1);
+    }
+    System.out.println(p);
+    
+      
+ }
+}
