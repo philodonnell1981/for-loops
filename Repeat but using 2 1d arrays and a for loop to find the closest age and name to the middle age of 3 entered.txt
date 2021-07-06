@@ -1,0 +1,68 @@
+package testingProject;
+
+import java.util.*;
+
+public class MainClass {
+  
+  static Scanner cin = new Scanner (System.in);
+  static final int PEOPLE = 3;
+  
+  public static void main(String[] args) {
+    
+    /*
+     * Write a Java program that prompts the user to enter the names 
+     * and the ages of three people and then displays the name of the 
+     * youngest person or the oldest person, depending on which one 
+     * is closer to the third age in the middle.
+     */
+    
+    String minName, maxName;
+    int i, min, max, mid;
+    
+    String[] ppl = new String[PEOPLE];
+    int[] ages = new int[PEOPLE];
+    
+    for (i = 0; i < PEOPLE; i++) {
+      System.out.print("Enter the name of person number " + (i + 1) + ": ");
+      ppl[i] = cin.nextLine();
+      System.out.print("Enter the age of person number " + (i + 1) + ": ");
+      ages[i] = Integer.parseInt(cin.nextLine());
+    }
+    
+    min = ages[0];
+    minName = ppl[0];
+    if (ages[1] < min) {
+      min = ages[1];
+      minName = ppl[1];
+    }
+    if (ages[2] < min) {
+      min = ages[2];
+      minName = ppl[2];
+    }
+    
+    max = ages[0];
+    maxName = ppl[0];
+    if (ages[1] > max) {
+      max = ages[1];
+      maxName = ppl[1];
+    }
+    if (ages[2] > max) {
+      max = ages[2];
+      maxName = ppl[2];
+    }
+    
+    mid = ages[0] + ages[1] + ages[2] - min - max;
+    
+    if (Math.abs(min - mid) < max - mid) {
+      System.out.println(minName + ", aged " + min + " is the youngest, and closest to the middle age of " + mid);
+    }
+    else if (max - mid < Math.abs(min - mid)) {
+      System.out.println(maxName + ", aged " + max + " is the oldest, and closest to the middle age of " + mid);
+    }
+    else {
+      System.out.println(minName + " (" + min + ") & " + maxName + " (" + max + ") are both as close to the middle age of " + mid );
+    }    
+    
+    
+ }
+}
