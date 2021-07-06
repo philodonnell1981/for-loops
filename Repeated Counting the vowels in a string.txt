@@ -1,0 +1,35 @@
+package testingProject;
+
+import java.util.*;
+
+public class MainClass {
+  
+  static Scanner cin = new Scanner (System.in);
+
+  public static void main(String[] args) {
+    
+    /*
+     * Write a Java program that prompts the user to enter a message and 
+     * then counts and displays the number of vowels the message contains.
+     */
+    
+    String msg;
+    char cha;
+    String vowels = "AEIOU";
+    int i, c;
+    
+    c = 0;
+    
+    System.out.print("Enter a message");
+    msg = cin.nextLine().toUpperCase();
+    
+    for (i = 0; i < msg.length(); i++) {
+      cha = msg.charAt(i); // contains the value of the char at position i within string msg until at the end
+      if (vowels.indexOf(cha) != -1) { // compares the character to each character within vowels
+        c++;
+      }
+    }
+    System.out.println(c);
+
+ }
+}
