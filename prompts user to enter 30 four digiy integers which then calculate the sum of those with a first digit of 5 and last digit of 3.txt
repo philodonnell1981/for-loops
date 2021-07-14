@@ -1,0 +1,31 @@
+package testingProject;
+
+import java.util.*;
+
+public class MainClass {
+  
+  static Scanner cin = new Scanner (System.in);
+  
+  public static void main(String[] args) {
+    
+    /*
+     * Design a flowchart and write the corresponding Java program 
+     * that prompts the user to enter 30 four-digit integers and then 
+     * calculates and displays the sum of those with a first digit of 
+     * 5 and a last digit of 3. For example, 
+     * values 5003, 5923, and 5553 are all such integers.
+     */
+    
+    int i, num, sum = 0;
+    
+    for (i = 1; i <= 30; i++) {
+      System.out.print("enter a four-digit number: ");
+      num = Integer.parseInt(cin.nextLine());
+      if (num / (int)1000 == 5 && num % 10 == 3) {
+        sum += num;
+      }
+    }
+    System.out.println(sum);
+    
+ }
+}
