@@ -1,0 +1,63 @@
+package testingProject;
+
+import java.util.*;
+
+public class MainClass {
+  
+  static Scanner cin = new Scanner (System.in);
+  
+  public static void main(String[] args) {
+    
+    /*
+     * Design a flowchart and write the corresponding Java program that lets 
+     * a teacher enter the total number of students as well as their grades 
+     * and then calculates and displays the average value of those who got an “A”, that is 90 to 100. 
+     * Add all necessary checks to make the program satisfy the property of definiteness.   
+     */
+    
+    int aCount, i;
+    double students, grade, aGrades;
+    
+    aGrades = 0;
+    grade = 0;
+    aCount = 0;
+    
+    System.out.print("Enter the number of students: ");
+    students = Double.parseDouble(cin.nextLine());
+    while (students <= 0 || students != (int) students) {
+      if (students == 0) {
+        System.out.println("No students entered");
+        break;
+      }
+      else { 
+      System.out.println("Invalid Entry");
+      System.out.print("Enter the number of students: ");
+      students = Integer.parseInt(cin.nextLine());
+    }
+    }
+    
+    for (i = 1; i <= students; i++) {
+      System.out.print("Enter a grade (0 - 100): ");
+      grade = Double.parseDouble(cin.nextLine());
+      while (grade < 0 || grade > 100) {
+        System.out.println("Invalid entry!");
+        System.out.print("Enter a grade (0 - 100): ");
+        grade = Double.parseDouble(cin.nextLine());       
+      }
+      if (grade >= 90 && grade <= 100) {
+        aGrades += grade;
+        aCount++;
+      }
+    }
+    
+    if (aCount == 0) {
+      System.out.println("No students got an 'A'");
+    }
+    else {
+      System.out.println("Average grade of those students who got an 'A': " + (aGrades / aCount) + ".");
+    }
+    
+    
+    
+ }
+}
