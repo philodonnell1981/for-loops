@@ -1,0 +1,40 @@
+package testingProject;
+
+import java.util.*;
+
+public class MainClass {
+  
+  static Scanner cin = new Scanner (System.in);
+  
+  public static void main(String[] args) {
+    
+    /*
+     * Design a flowchart and write the corresponding Java program that prompts 
+     * the user to enter N integers and then displays the total number of those 
+     * that are even. The value of N must be given by the user at the beginning 
+     * of the program. Moreover, if all integers given are odd, the message 
+     * “You entered no even integers” must be displayed.
+     */
+    
+    int i, n, a, count;
+    
+    System.out.print("Enter an Integer: ");
+    n = Integer.parseInt(cin.nextLine());
+    
+    count = 0;
+    for (i = 1; i <= n; i++) {
+      System.out.print("Enter an integer number: ");
+      a = Integer.parseInt(cin.nextLine());
+      if (a % 2 == 0) {
+        count++;
+      }
+    }
+    if (count > 0) {
+      System.out.println(count);
+    }
+    else {
+      System.out.print("No even numbers entered.");
+    }
+    
+ }
+}
