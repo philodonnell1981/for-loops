@@ -1,0 +1,38 @@
+package testingProject;
+
+import java.util.*;
+
+public class MainClass {
+  
+  static Scanner cin = new Scanner (System.in);
+  
+  public static void main(String[] args) {
+    
+   /*
+    * Write a Java program that prompts the user to enter a message and then 
+    * displays the number of words it contains. For example, if the string 
+    * entered is “My name is Bill Bouras”, the program must display 
+    * “The message entered contains 5 words”. 
+    * Assume that the words are separated by a single space character.
+    */
+    
+    int i, count = 0, words;
+    String msg, cha;
+    
+    System.out.print("Enter a message: ");
+    msg = cin.nextLine();
+        
+    for (i = 0; i <= msg.length() - 1; i++) {
+      cha = "" + msg.charAt(i);
+      if (cha.equals(" ")) {
+        count++;
+      }
+    }
+    
+    
+    System.out.println("Your message contains " + count + " words.");
+    
+    
+    
+ }
+}
