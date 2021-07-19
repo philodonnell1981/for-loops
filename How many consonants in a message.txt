@@ -1,0 +1,31 @@
+package testingProject;
+
+import java.util.*;
+
+public class MainClass {
+  
+  static Scanner cin = new Scanner (System.in);
+  
+  public static void main(String[] args) {
+    /*
+     * Write a Java program that prompts the user to enter a message and 
+     * then counts and displays the number of consonants the message contains.
+     */
+    
+    String msg, con = "aeiou", cha;
+    int i, count = 0;
+    
+    System.out.print("Enter a message: ");
+    msg = cin.nextLine();
+    
+    for (i = 0; i <= msg.length() - 1; i++) {
+      cha = "" + msg.charAt(i);
+      if (con.indexOf(cha) != -1) {
+        count++;
+      }
+    }
+    
+    System.out.println("Number of consonants in message: " + count);
+    
+ }
+}
